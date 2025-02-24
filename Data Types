@@ -1,0 +1,38 @@
+# Data Types in Python 
+
+name = "Harshit Mishra"
+age = 22
+weight = 67.02
+isTeacher = False
+
+# set - > UNIQUE , ADD , REMOVE , EDIT 
+fruitsIliked = {"orange","mango","Apple"}
+ 
+ # LIST -> REPEATED , ADD , REMOVE , EDIT
+ 
+earningFrom2024 = [10,23,26,25,26]
+ 
+ # Tuple -> Fixed , Repeat
+ 
+earningBefore2024 = (10,23,23,45,66)
+ 
+ # Dictonary -> Key : Value 
+ 
+property = {
+     "Home" : 1,
+     "Bike" : 2,
+     
+ }
+
+# None - > 
+overHyped = None
+
+print(name,type(name))
+print(age,type(age))
+print(weight,type(weight))
+print(isTeacher,type(isTeacher))
+print(fruitsIliked,type(fruitsIliked))
+print(earningFrom2024,type(earningFrom2024))
+print(earningBefore2024,type(earningBefore2024))
+print(property,type(property))
+print(overHyped,type(overHyped))
