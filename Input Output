@@ -1,0 +1,34 @@
+
+# Basic Python 
+
+# 1 - Taking Input 
+
+# name = input() # This function takes input in string 
+# age = input()
+# print(type(age))
+'''
+age = int(input("Enter age "))
+print(age,end=" ")
+print(type(age))
+
+salary = float(input(" enter salary "))
+print(salary,end=" ")
+print(type(salary))
+
+isAdmin = bool(input("enter True or False "))
+print(isAdmin,end=" ")
+print(type(isAdmin))
+'''
+'''
+num = input().split()
+print(num,type(num))
+
+a,b,c = map(int,input().split())
+print(a)
+print(type(a))
+print(b)
+print(c)
+'''
+
+lst = list(map(int,input().split()))
+print(lst)
