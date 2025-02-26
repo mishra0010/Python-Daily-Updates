@@ -1,0 +1,103 @@
+'''
+var = input("enter a number ")
+summ=0
+for x in range(len(var)):
+    summ = summ + int(var[x])
+print(summ)
+
+# Adding Two Numbers in Python 
+
+var1 = int(input())
+var2 = int(input())
+print(var1 + var2)
+
+# 1 - Add two numbers using function 
+
+def add(n1,n2):
+    return n1 + n2
+n1 = int(input())
+n2 = int(input())
+res = add(n1,n2)
+print(res)
+
+
+# 2 - Add two numbers using recursive function
+
+def addrec(x,y):
+    if y==0:
+        return x
+    else:
+      return addrec(x+1,y-1)
+x = int(input())
+y = int(input())
+sum = addrec(x,y)
+print("sum of two numbers is ",sum)
+
+
+
+# Find Maximum of two numbers in Python
+
+# 1 - using user function 
+
+def maximum(n1,n2):
+    if n1>n2:
+        return n1
+    else:
+        return n2
+n1 = int(input())
+n2 = int(input())
+maxNum = maximum(n1,n2)
+print("Maximum number is ",maxNum)
+
+
+# 2 - using inbuilt function 
+
+n1 = int(input())
+n2 = int(input())
+res = max(n1,n2)
+print(res)
+
+
+# 3 - Using ternary operator 
+
+n1 = int(input())
+n2 = int(input())
+res = n1 if n1 > n2 else n2
+print(res)
+
+
+# Python Program to Find the Factorial of a Number
+
+# 1 - using normal Method 
+
+n = int(input())
+fact = 1
+for i in range(1,n+1):
+    fact *= i
+print(fact)
+
+# 2 - Using recursive Approach 
+
+def fact(n):
+    if n== 0 or n==1:
+        return 1
+    else:
+        return n * fact(n-1)
+n = int(input())
+res = fact(n)
+print(res)
+
+
+# 3 - Using the Ternery Operator one line 
+
+def fact(n):
+    return 1 if n==1 or n==0 else n * fact(n-1)
+    
+n = int(input())
+print(fact(n))
+'''
+
+
+
+
+
