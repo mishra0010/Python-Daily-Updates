@@ -96,6 +96,77 @@ def fact(n):
 n = int(input())
 print(fact(n))
 '''
+'''
+# SI of Expression 
+# 1 - Using User defined Function
+def si(p,t,r):
+    return (p*t*r)/100
+p = int(input())
+t = int(input())
+r = int(input())
+
+res = si(p,t,r)
+print(res)
+# 2 - Using Lambda Function
+si = lambda p,t,r : (p*t*r) / 100
+
+p = int(input())
+t = int(input())
+r = int(input())
+
+res = si(p,t,r)
+print(res)
+
+# Python3 program to find compound
+# 1 - User Defined Function
+def compound_interest(principal, rate, time):
+	Amount = principal * (pow((1 + rate / 100), time))
+	CI = Amount - principal
+	print("Compound interest is", CI)
+principal = int(input())
+rate = float(input())
+time = int(input())
+compound_interest(principal,rate,time)
+
+# 2 - Without Using Power function
+def compound_interest(principal, rate, time):
+	Amount = principal * (((1 + rate / 100) ** time))
+	CI = Amount - principal
+	print("Compound interest is", CI)
+principal = int(input())
+rate = float(input())
+time = int(input())
+compound_interest(principal,rate,time)
+
+# Python Program to Check Armstrong Number
+
+n = int(input("Enter a Number")) 
+s = n 
+b = len(str(n))
+sum1 = 0
+while n != 0:
+	r = n % 10
+	sum1 = sum1+(r**b)
+	n = n//10
+if s == sum1:
+	print("The given number", s, "is armstrong number")
+else:
+	print("The given number", s, "is not armstrong number")
+'''
+
+# Python Program to reverse the digits of a number
+def reverse_number(num):
+    reversed_num = 0
+    while num > 0:
+        digit = num % 10
+        reversed_num = (reversed_num * 10) + digit
+        num //= 10
+    return reversed_num
+
+num = int(input("Enter a number to reverse: "))
+reversed_num = reverse_number(num)
+print(f"The reversed number is: {reversed_num}")
+
 
 
 
