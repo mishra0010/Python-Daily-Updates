@@ -1,0 +1,115 @@
+# # Take a space-separated input from the user
+# user_input = input("Enter numbers separated by space: ")
+
+# # Convert the input string into a list of integers
+# user_list = [int(x) for x in user_input.split()]
+
+# # Calculate the sum of the list elements
+# sum_of_elements = sum(user_list)
+
+# # Print the result
+# print("Sum of elements:", sum_of_elements)
+
+# def leapYear(year):
+#     if (year%4) == 0:
+#         if(year%100) == 0:
+#             if(year%400) == 0:
+#                 return f"It is a Leap Year"
+#             else:
+#                 return f"not a leap year"
+            
+#         else:
+#             return f"Leap Year"
+#     else: 
+#         return f"Not a Leap Year"
+# year = int(input("Enter a year "))
+# res = leapYear(year)
+# print(res)
+
+# Love Calculator 
+
+# boyName = input("Enter boy name ")
+# girlName = input("Enter girl name ")
+# Combination = boyName + girlName
+# lower_case_Combination = Combination.lower()
+
+# t = lower_case_Combination.count('t')
+# r = lower_case_Combination.count('r')
+# u = lower_case_Combination.count('u')
+# e = lower_case_Combination.count('e')
+# love_percentage_true = (t+r+u+e)
+
+# l = lower_case_Combination.count('l')
+# o = lower_case_Combination.count('o')
+# v = lower_case_Combination.count('v')
+# e = lower_case_Combination.count('e')
+# love_percentage_love = (l+o+v+e)
+
+# final_love_score = (love_percentage_love * 10) + love_percentage_true
+# if final_love_score > 90:
+#     print(f"Made for Each Other, your score is{final_love_score}")
+# elif final_love_score > 50 and final_love_score < 90:
+#         print(f"Good to go ,your score is{final_love_score}")
+# else:
+#         print(f"Apne Apne ghar jao , so jao ,your score is        {final_love_score}")
+
+
+
+#                   Lists in Python 
+
+l1 = [2,4,6,8,-1]
+
+print(l1) # [2, 4, 6, 8, -1]
+
+print(l1[0]) # fetches the first element 2
+
+print(l1[-1]) # fetches the last element -1
+
+print(l1[-2]) # fetches last second element 8
+
+print(l1[0:3]) # fetches elements from start till 2 position [2, 4, 6]
+
+print(l1[0:3:2]) # fetches elements from start till 2 position with step of 2 . [2,6]
+
+print(l1[::-1]) # Reverse the string [-1, 8, 6, 4, 2]
+
+l1.sort() # used to sort the list in ascending order 
+
+print(l1) # -1, 2, 4, 6, 8]
+
+l1.reverse() # used to reverse the current order of the list 
+
+print(l1) # [8, 6, 4, 2, -1]
+
+print(min(l1)) # -1
+
+print(max(l1)) # 8
+
+l1.append(8) # To add value at the last 
+
+print(l1) # [8, 6, 4, 2, -1, 8]
+
+l1.insert(1,9) # To add the value at the specific location 
+
+print(l1) # [8, 9, 6, 4, 2, -1, 8]
+
+l1.extend([45,67,69,33,24]) # used to append two strings
+
+print(l1) # [8, 9, 6, 4, 2, -1, 8, 45, 67, 69, 33, 24]
+
+l1[1] = 43 # changing digit at specific place
+
+print(l1) # [8, 43, 6, 4, 2, -1, 8, 45, 67, 69, 33, 24]
+
+l1.remove(8) # used to remove specific element but at first occurence 
+
+print(l1) # [43, 6, 4, 2, -1, 8, 45, 67, 69, 33, 24]
+
+l1.pop() # removes from the last
+
+print(l1) # [43, 6, 4, 2, -1, 8, 45, 67, 69, 33]
+
+l1.pop(2) # used to remove element from the specific location
+
+print(l1) # [43, 6, 2, -1, 8, 45, 67, 69, 33]
+
