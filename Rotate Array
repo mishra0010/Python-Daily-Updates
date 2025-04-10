@@ -1,0 +1,18 @@
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        k = k % len(nums)
+        l , r = 0, len(nums) - 1
+        # Firstly we have rotated the whole array 
+        while l < r:
+            nums[l] , nums[r] = nums[r] , nums[l]
+            l,r = 1+l , r-1
+        l , r = 0,k - 1
+        # Then we rotated the first part of the array till k
+        while l < r:
+            nums[l] , nums[r] = nums[r] , nums[l]
+            l,r = 1+l , r-1
+        l , r = k, len(nums) - 1
+        # Then we rotated the last part of the array from k 
+        while l < r:
+            nums[l] , nums[r] = nums[r] , nums[l]
+            l,r = 1+l , r-1
