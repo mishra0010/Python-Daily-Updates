@@ -1,39 +1,47 @@
- LeetCode Problem: Product of Array Except Self
-🧾 Problem Statement:
-Given an integer array nums, return an array answer such that answer[i] is equal to the product of all elements in nums except nums[i].
+# 🔢 Product of Array Except Self
 
-Important Constraints:
-The product of any prefix or suffix of nums will fit in a 32-bit integer.
-The solution must have a time complexity of O(n).
-Division is not allowed.
+**LeetCode Problem Link:** [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/submissions/1614597878/)
 
-💡 Examples:
-Example 1:
+---
 
-Input:  nums = [1, 2, 3, 4]
-Output: [24, 12, 8, 6]
+## 🧾 Problem Statement
 
-Example 2:
+Given an integer array `nums`, return an array `answer` such that `answer[i]` is equal to the product of all elements of `nums` except `nums[i]`.
 
-Input:  nums = [-1, 1, 0, -3, 3]
+The product of any prefix or suffix of `nums` is guaranteed to fit in a 32-bit integer. You must solve the problem in O(n) time without using the division operation.
+
+---
+
+## 📌 Constraints
+
+- 2 <= nums.length <= 10⁵  
+- -30 <= nums[i] <= 30  
+- The result is guaranteed to fit in a 32-bit integer  
+- Division is not allowed  
+- Time complexity must be O(n)  
+
+---
+
+## 💡 Examples
+
+**Example 1**  
+Input: nums = [1, 2, 3, 4]  
+Output: [24, 12, 8, 6]  
+
+**Example 2**  
+Input: nums = [-1, 1, 0, -3, 3]  
 Output: [0, 0, 9, 0, 0]
 
-✅ Constraints:
-2 <= nums.length <= 10^5
--30 <= nums[i] <= 30
-The output is guaranteed to fit in a 32-bit integer.
+---
 
+## 🛠️ Solution Approaches
 
-🛠️ Solution Approaches:
-1. Brute Force Approach (O(n²) Time | O(n) Space)
-This naive solution uses nested loops to calculate the product of all elements except the one at index i.
+### 1. Brute Force Approach (O(n²) Time | O(n) Space)
 
-For each element at index i, iterate through the entire array.
+In this approach, we iterate over each element of the array using two nested loops. For each index `i`, we multiply all elements of the array except `nums[i]` and store the result in a temporary array.
 
-Skip the index i, and multiply all other elements.
-
-Store the result in a new array and return it.
-
+**Code:**
+```python
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         n = len(nums)
@@ -48,38 +56,30 @@ class Solution:
             res[i] = prod
         return res
 
-⚠️ This approach works correctly but is inefficient for large arrays due to its O(n²) time complexity.
 
-2. Optimized Approach Using Prefix and Postfix Products (O(n) Time | O(1) Extra Space)
-This method efficiently computes the result by using two passes:
+# Optimized Approach Using Prefix and Postfix (O(n) Time | O(1) Extra Space)
 
-First pass (left to right): Compute the prefix product for each element.
-Second pass (right to left): Multiply with the postfix product.
+This method uses two passes to calculate prefix and postfix products:
+In the first pass (left to right), we compute the prefix product for each index and store it in the result array.
+In the second pass (right to left), we multiply the result with the postfix product of each index.
 
-Key Idea:
+The idea is:
+res[i] = product of all elements to the left of i * product of all elements to the right of i
 
-res[i] should be equal to the product of all elements before i (prefix) and all elements after i (postfix).
-
+Code:
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         res = [1] * len(nums)
-        
-        # Compute prefix products
+
         prefix = 1
         for i in range(len(nums)):
             res[i] = prefix
             prefix *= nums[i]
-        
-        # Compute postfix products and multiply with result
+
         postfix = 1
         for i in range(len(nums) - 1, -1, -1):
             res[i] *= postfix
             postfix *= nums[i]
-        
-        return res
-✅ This approach meets all constraints:
 
-Runs in linear time O(n)
-Does not use division
-Uses only constant extra space (excluding output array)
+        return res
