@@ -1,0 +1,56 @@
+# Inbuilt Function in Python 
+
+print(ord('A'))
+print(chr(65))
+
+# Slicing in python string
+
+Name = "Har shit"
+print(Name[0:3:1])
+print(Name[0:5:2])
+print(Name[:4])
+print(Name[::])
+print(Name[0::3])
+print(Name[-1:-4:-1])
+print(Name[-1:-5:-2])
+print(Name[-2:-6:2])
+print(Name[-1:-6:])
+print(Name[-1:-1:-1])
+
+# Concatenation in python 
+
+str_1 = "Harshit"
+str_2 = "Mishra"
+print(str_1 + str_2)
+
+num1 = 9
+num2 = 4
+print("Sum of number is :" + str(num1+num2))
+
+Heading  = "Introduction"
+deas = "-" * 50
+subheading = "Sub heading"
+print(Heading)
+print(deas)
+print(subheading)
+
+# How to find the Number of vowels in string 
+str1 = input()
+vowels = ['a','e','i','o','u']
+count = 0
+for i in range(len(str1)):
+    if str1[i] in vowels:
+        count += 1
+print(count)
+
+string1 = 'harshit'
+print(list(enumerate(string1)))
+
+print(string1.find('h'))
+print(string1.rfind('h'))
+
+
+
+
+
+
