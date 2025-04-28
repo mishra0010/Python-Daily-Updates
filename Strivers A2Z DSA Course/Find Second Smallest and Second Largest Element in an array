@@ -1,0 +1,29 @@
+# 2 - Find Second Largest and Second Smallest Element from the array
+# Brute force way 
+def solverFunction(lst,num):
+    if num <=1:
+        return (-1 , -1)
+    largest_ele = float('-inf')
+    sec_largest_ele = float('-inf')
+    smallest_ele = float('inf')
+    sec_smallest_ele = float('inf')
+    
+    for i in range(num):
+        largest_ele = max(largest_ele, lst[i])
+        smallest_ele = min(smallest_ele , lst[i])
+    for i in range(num):
+        if lst[i] < sec_smallest_ele and lst[i] != smallest_ele:
+            sec_smallest_ele = lst[i]
+        if lst[i] > sec_largest_ele and lst[i] != largest_ele:
+            sec_largest_ele = lst[i]
+    return sec_largest_ele , sec_smallest_ele
+
+
+if __name__ == '__main__':
+    num = int(input("Enter length of the array : "))
+    lst = []
+    print("Enter Elements of an array ")
+    for i in range(num):
+        ele = int(input())
+        lst.append(ele)
+    print(solverFunction(lst,num))
