@@ -1,0 +1,16 @@
+# 1 - > Finding maximum element in the array
+
+def findLargestElement(arr, num):
+    max = arr[0]
+    for i in range(0, num):
+        if (max < arr[i]):
+            max = arr[i]
+    return max
+
+num = int(input("Enter length of array : "))
+lst = []
+print("Enter elements of the array :")
+for i in range(num):
+    ele = int(input())
+    lst.append(ele)
+print(f"Largest element in the array is : {findLargestElement(lst, num)}")
