@@ -1,5 +1,5 @@
 # 2 - Find Second Largest and Second Smallest Element from the array
-# Brute force way 
+# Finding Largest,Smallest and Sec_Largest,Sec_Smallest individually
 def solverFunction(lst,num):
     if num <=1:
         return (-1 , -1)
@@ -27,3 +27,42 @@ if __name__ == '__main__':
         ele = int(input())
         lst.append(ele)
     print(solverFunction(lst,num))
+
+
+# Finding Largest,Smallest and Sec_Largest,Sec_Smallest in one pass 
+
+def secondSmallest(lst,num):
+    if num <= 1:
+        return -1
+    smallest_ele = float('inf')
+    sec_smallest_ele = float('inf')
+    for i in range(num):
+        if lst[i] < smallest_ele:
+            sec_smallest_ele = smallest_ele
+            smallest_ele = lst[i]
+        elif lst[i] < sec_smallest_ele and lst[i] != smallest_ele:
+            sec_smallest_ele = lst[i]
+    return sec_smallest_ele
+    
+def secondLargest(lst,num):
+    if num <= 1:
+        return -1
+    Largest_ele = float('-inf')
+    sec_Largest_ele = float('-inf')
+    for i in range(num):
+        if lst[i] > Largest_ele:
+            sec_Largest_ele = Largest_ele
+            Largest_ele = lst[i]
+        elif lst[i] > sec_Largest_ele and lst[i] != Largest_ele:
+            sec_Largest_ele = lst[i]
+    return sec_Largest_ele
+    
+if __name__ == '__main__':
+    num = int(input("Enter length of the array : "))
+    lst = []
+    print("Enter Elements of an array ")
+    for i in range(num):
+        ele = int(input())
+        lst.append(ele)
+    print(secondSmallest(lst,num))
+    print(secondLargest(lst,num))
