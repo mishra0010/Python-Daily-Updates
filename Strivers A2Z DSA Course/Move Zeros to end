@@ -1,0 +1,25 @@
+
+def moveZeroesToEnd(size,lst):
+    pos = 0
+    for i in range(size):
+        if lst[i] == 0:
+            continue
+        else:
+            lst[pos] = lst[i]
+            pos += 1
+    while(pos!=size):
+        lst[pos] = 0
+        pos += 1
+    return lst
+
+
+if __name__ == '__main__':
+    size = int(input("Enter size of the array : "))
+    lst = []
+    print("Enter the array elements : ")
+    for i in range(size):
+        ele = int(input())
+        lst.append(ele)
+    print(moveZeroesToEnd(size,lst))
+ 
+ 
